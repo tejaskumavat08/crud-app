@@ -1,4 +1,4 @@
-<h1>CURD App<h1>
+<h1>CRUD App<h1>
 <h2>Features</h2>
 <ul>
     <li>Create new records</li>
