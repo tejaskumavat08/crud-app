@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <style> 
+  /* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Edit Container */
+.edit-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 60%;
+    max-width: 500px;
+}
+
+/* Heading */
+h2 {
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+/* Post Info */
+.post-info {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.post-info span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #005f8f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edit-container {
+        width: 90%;
+    }
+}
+
+  </style>
+    <title>Edit Post</title>
+</head>
+<body>
+    <div class="edit-container">
+        <h2>Edit Your Post</h2>
+        <p class="post-info">Post ID: <span><%= post.id %></span></p>
+        <p class="post-info">Username: <span>@<%= post.username %></span></p>
+
+        <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+            <textarea rows="10" cols="40" name="content"><%= post.content %></textarea>
+            <button class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

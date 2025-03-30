@@ -1,0 +1,20 @@
+{
+  "name": "rest-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tejas Kumavat",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "method-override": "^3.0.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "ejs": "^3.1.10"
+  }
+}

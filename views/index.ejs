@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>All Posts</title>
+  
+  <style>/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    background-color: maroon;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Posts Container */
+.posts-container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Post Card */
+.post {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.user {
+    color: #0077b6;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Links */
+.btn-link {
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #0077b6;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #0077b6;
+    color: white;
+}
+
+.edit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+.edit:hover {
+    background-color: #218838;
+}
+
+/* Delete Button */
+form {
+    display: inline;
+}
+
+.delete-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Create New Post Button */
+.create-btn {
+    background-color: maroon;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.create-btn a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-btn:hover {
+    background-color: #005f8f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .posts-container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+</style>
+</head>
+<body>
+    <h1>Quora Posts</h1>
+
+    <div class="posts-container">
+        <% for (let index = 0; index < posts.length; index++) { %> 
+            <div class="post">
+                <h3 class="user">@<%= posts[index].username %></h3>
+                <h4 class="content"><%= posts[index].content %></h4>
+                <div class="actions">
+                    <a class="btn-link" href="http://localhost:8080/posts/<%= posts[index].id %>">See Details</a>
+                    <a class="btn-link edit" href="http://localhost:8080/posts/<%= posts[index].id %>/edit">Edit</a>
+                    <form method="post" action="/posts/<%= posts[index].id %>?_method=DELETE">
+                        <button class="delete-btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+    <button class="create-btn">
+        <a href="http://localhost:8080/posts/new">Create New Post</a>
+    </button>
+</body>
+</html>
