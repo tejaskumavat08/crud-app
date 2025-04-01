@@ -11,5 +11,5 @@
 <ul>
     <li><strong>Backend:</strong> Node.js, Express.js</li>
     <li><strong>Frontend:</strong> HTML, CSS</li>
-    <li><strong>Database:</strong> (Specify your database, e.g., MongoDB, MySQL, or a JSON file)</li>
+    <li><strong>Database:</strong> JSON file</li>
 </ul>
