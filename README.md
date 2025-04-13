@@ -83,6 +83,8 @@ Updates a post's content.
 ### DELETE /posts/:id
 Deletes a post and redirects to `/posts`.
 
+
+
 ## Future Enhancement
 We can add registration and login page for user also we can post the images/videos instead of only text. 
 
